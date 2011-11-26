@@ -38,9 +38,6 @@ augroup END
 endif
 
 syntax on
-" Just in case I forget sudo on :w
-cmap w!! %!sudo tee > /dev/null %
-
 
 "dump tmp files in central location
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -51,3 +48,4 @@ source ~/.vim/php-doc.vim
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
 nnoremap <C-P> :call PhpDocSingle()<CR> 
 vnoremap <C-P> :call PhpDocRange()<CR> 
+nmap <F8>:TagbarToggle<CR>
