@@ -1,51 +1,30 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/syntastic'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'mattn/emmet-vim'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-commentary'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'mxw/vim-jsx'
+Plugin 'ap/vim-css-color'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'ctags.vim'
+Plugin 'beautify-web/js-beautify'
+Plugin 'myhere/vim-nodejs-complete'
+
+
+call vundle#end()
+filetype plugin indent on
+syntax enable
 set number
-set nocompatible
-set expandtab
-set tabstop=2 shiftwidth=2 softtabstop=2
-set autoindent
-set foldmethod=indent
-set smartindent
-set smarttab
-set title
-set history=50
-set hidden
-set showcmd
-set hlsearch
-set incsearch
-set nocompatible
-set wildmenu
-set wildmode=list:longest,full
-set showmatch
-set cursorline
-set linebreak
-set incsearch
-set ignorecase
-set smartcase
-filetype plugin on
-let python_highlight_all=1
-filetype indent on
-set visualbell
+set tabstop=4
 
-set mouse=a
-set backspace=indent,eol,start
-
-if has("autocmd")
-  augroup phpfiles
-
-autocmd BufRead,BufNewFile *.php,*.module,*.theme,*.inc,*.install,*.info,*.engine,*.profile,*.test set filetype=php
-
-augroup END
-endif
-
-syntax on
-
-"dump tmp files in central location
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-
-"Add PHPDocs to vim
-source ~/.vim/php-doc.vim 
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-P> :call PhpDocSingle()<CR> 
-vnoremap <C-P> :call PhpDocRange()<CR> 
-nmap <F8>:TagbarToggle<CR>
